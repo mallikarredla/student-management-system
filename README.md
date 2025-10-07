@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Student Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack **Student Management System** application with:
 
-## Available Scripts
+- **Frontend:** ReactJS with HTML, CSS, and JavaScript
+- **Backend:** Java 17 Spring Boot REST API secured with JWT authentication
+- **Database:** MySQL
+- **Build Tool:** Maven
+- **Docker:** Used for containerizing backend and frontend
+- **API Testing:** Postman collection available for testing endpoints
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+student-management-system/
+│
+├── backend/ # Java Spring Boot backend
+│ ├── src/ # Source code
+│ ├── pom.xml # Maven build file
+│ └── Dockerfile # Docker configuration
+│
+├── frontend/ # ReactJS frontend code
+│
+├── docker UI.dockerfile # Dockerfile for UI
+│
+└── README.md # This file
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- User authentication and authorization using JWT (JSON Web Tokens)
+- Secure REST API with Spring Security
+- CRUD operations for managing student data
+- Data persistence using MySQL database
+- Responsive ReactJS user interface connected to backend APIs
+- Docker support for easy deployment and environment consistency
+- Postman collection included for API testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Java 17
+- Maven 3.x
+- Node.js and npm
+- MySQL database setup (default port 3306)
+- Docker (optional, if using containers)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd backend
+./mvnw spring-boot:run
+Backend will start on port 9091 (default).
+Ensure your MySQL database credentials and settings are configured in src/main/resources/application.properties.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Running the Frontend
+bash
+Copy code
+cd frontend
+npm install
+npm start
+Frontend runs on port 3000 by default.
 
-## Learn More
+Docker Usage
+Backend Docker
+bash
+Copy code
+cd backend
+docker build -t student-backend .
+docker run -p 9091:9091 student-backend
+Frontend Docker
+bash
+Copy code
+docker build -t student-ui -f "docker UI.dockerfile" .
+docker run -p 3000:3000 student-ui
+API Testing with Postman
+Use the included Postman collection to test API endpoints easily. Import the collection into Postman and update environment variables as needed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Configuration
+Backend database and JWT configurations are in application.properties
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Modify ports and secrets as required
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contact
+Developed by Mallikarjuna Karedla
+GitHub: https://github.com/mallikarredla
+git commit -m "Add customized project README"
+git push origin feature/jwt-auth
