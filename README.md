@@ -49,7 +49,7 @@ student-management-system/
 - Maven 3.x
 - Node.js and npm
 - MySQL database setup (default port 3306)
-- Docker (optional, if using containers)
+- Docker
 
 ---
 
