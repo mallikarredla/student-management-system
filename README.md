@@ -71,25 +71,20 @@ Frontend runs on port 3000 by default.
 
 Docker Usage
 Backend Docker
-bash
-Copy code
 cd backend
 docker build -t student-backend .
 docker run -p 9091:9091 student-backend
 Frontend Docker
-bash
-Copy code
+
 docker build -t student-ui -f "docker UI.dockerfile" .
 docker run -p 3000:3000 student-ui
 API Testing with Postman
-Use the included Postman collection to test API endpoints easily. Import the collection into Postman and update environment variables as needed.
 
 Configuration
 Backend database and JWT configurations are in application.properties
 
-Modify ports and secrets as required
 
 Contact
 Developed by Mallikarjuna Karedla
 GitHub: https://github.com/mallikarredla
-git push origin feature/jwt-auth
+
