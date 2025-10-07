@@ -92,5 +92,4 @@ Modify ports and secrets as required
 Contact
 Developed by Mallikarjuna Karedla
 GitHub: https://github.com/mallikarredla
-git commit -m "Add customized project README"
 git push origin feature/jwt-auth
